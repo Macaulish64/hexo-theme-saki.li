@@ -97,13 +97,18 @@
     border-style: solid none none none;
     border: 1px #ddd;
     .next {
-        text-align: right;
-        text-decoration: none;
-        color: gray;
+        a:link, a:visited {
+            text-align: right;
+            text-decoration: none;
+            color: gray;
+        }
     }
     .prev {
-        text-decoration: none;
-        color: gray;
+        a:link, a:visited {
+            text-align: left;
+            text-decoration: none;
+            color: gray;
+        }
     }
     display: flex;
     justify-content: space-between;

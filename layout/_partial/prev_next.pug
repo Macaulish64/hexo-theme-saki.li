@@ -1,0 +1,8 @@
+.prev_next
+  if page.prev || page.next
+    .prev
+      if page.prev
+        a(href=url_for(page.prev.path),class="alignright prev")="<= " +page.prev.title
+    .next
+      if page.next
+        a(href=url_for(page.next_link),class="alignright next")= page.next.title + " =>"

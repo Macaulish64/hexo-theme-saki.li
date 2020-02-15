@@ -1,0 +1,10 @@
+extends base
+
+//- 显示文章标题和内容
+block content
+  article.post
+    .post-title
+      h1.title= page.title
+    .post-content!= page.content
+
+  include _partial/prev_next.pug

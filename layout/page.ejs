@@ -1,0 +1,16 @@
+<% if (page.type === 'tags') { %>
+    <%- list_tags() %>
+<% } else if (page.type === 'categories') {%>
+    <%- list_categories() %>
+<% } else if (page.type === 'about' ) { %>
+    <%-  %>
+<% } else { %>  
+    <%-  partial('_partial/article',{post: page}) %>
+<% } %> 
+
+<div class="prev_next">
+    <%- partial('_partial/prev_next') %>
+</div>
+<div class="post-comment">
+    <%- partial('_partial/disqus') %>
+</div>

@@ -1,0 +1,18 @@
+//-头文件，一些应用
+head
+      meta(http-equiv="content-type",content="text/html; charset=utf-8")
+      meta(content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport")
+      //-网页标题
+      - const title = page.title === undefined?config.title : page.title + '-' + config.title
+      title= __(title)
+      meta(charset=utf-8)
+      meta(name="title" content=title)
+      meta(property="og:image",content=theme.favicon)
+      != favicon_tag(theme.favicon)
+      link(rel="stylesheet"
+            href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/arduino-light.min.css")
+      //- link(rel='icon', mask='',sizes='any', href=url_for('favicon.ico'))
+      if config.highlight.enable 
+            script(src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js")
+            script hljs.initHighlightingOnLoad();
+      != css('css/style.css')

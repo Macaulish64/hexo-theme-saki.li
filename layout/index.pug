@@ -1,0 +1,15 @@
+extends base
+
+block content
+    .posts
+        for post in page.posts.toArray()
+            article.post
+                .post-title
+                    a.post-title-link(href=url_for(post.path))
+                        = post.title
+                .post-content
+                    != post.content
+                .post-meta
+                    spac.post-time
+                        = date(post.date, "YYYY/MM/DD")
+    include _partial/paginator.pug
