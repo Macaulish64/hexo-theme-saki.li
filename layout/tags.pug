@@ -1,0 +1,20 @@
+extends base
+
+//- 显示
+block content
+    if site.tags.length
+        .tag
+            .tagcloud
+                - var dic = new Array()
+                for tag in site.tags.toArray()
+                    if tag.length
+                        a(href='/tags/#' + tag.name title=tag.name rel= tag.length ) #{" " + tag.name + " "}
+            .taglist
+                for tag in site.tags.toArray()
+                    if tag.length
+                        span.tag-name(id=tag.name) 
+                            span(class="text")= tag.name + " (" + tag.length + ")"
+                        for post in tag.posts.toArray()
+                            .tag-post
+                                span.tag-post-time= post.date.format(config.date_format)
+                                a.tag-post-name(href=url_for(post.path),title=post.title)= ' ' + post.title

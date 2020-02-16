@@ -1,0 +1,14 @@
+.blog-title
+  a.logo(href=url_for())= config.title
+nav.navbar
+  ul.menu
+    - for (var name in theme.menu) 
+      - let nav = page.path.replace('index.html', '')
+      - nav = nav!==''?nav:"/"
+      li.menu-item
+        //- 当前所在页面
+        if ('/' + nav !== theme.menu[name] + '/') 
+          a.menu-item-link(href=url_for(theme.menu[name]))= __(name)
+        else 
+          a.current-menu-item-link(href=url_for(theme.menu[name]))= __(name)
+    

@@ -1,3 +1,4 @@
-if page.total > 1
-  nav.page-nav
-    != paginator({prev_text: "&laquo;" + __('Paginator.Prev'),next_text: __('Paginator.Next') + "&raquo;"})
+.paginator
+  if page.total > 1
+    nav.page-nav
+      != paginator({prev_text: "&laquo;" + __('Prev '),next_text: __(' Next') + "&raquo;"})
