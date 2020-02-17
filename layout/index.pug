@@ -7,9 +7,13 @@ block content
                 .post-title
                     a.post-title-link(href=url_for(post.path))
                         = post.title
-                .post-content
-                    != post.content
                 .post-meta
                     spac.post-time
-                        = date(post.date, "YYYY/MM/DD")
+                        = "Posted on \""+date(post.date, "YYYY/MM/DD") + "\""
+                    spac.post-time
+                        = "|"
+                    spac.post-time
+                        = "Edited on \""+date(post.updated, "YYYY/MM/DD") + "\""
+                .post-content
+                    != post.content
     include _partial/paginator.pug

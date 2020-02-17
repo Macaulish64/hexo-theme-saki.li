@@ -5,6 +5,13 @@ block content
   article.post
     .post-title
       h1.title= page.title
+    .post-meta
+      spac.post-time
+          = "Posted on \""+date(page.date, "YYYY/MM/DD") + "\""
+      spac.post-time
+          = "|"
+      spac.post-time
+          = "Edited on \""+date(page.updated, "YYYY/MM/DD") + "\""
     .post-content!= page.content
 
   include _partial/prev_next.pug
