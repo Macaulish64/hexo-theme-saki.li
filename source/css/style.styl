@@ -1,4 +1,8 @@
 body {
+    background-image: linear-gradient(to right top, #828282 50%, #DCDCDC 50%);
+    background-size: 100% calc(100% - 100vh + 5px);
+    background-repeat: no-repeat;
+
     background-color: #ffffff;
     font-size: 16px;
     line-height: 1.5em;
@@ -10,6 +14,17 @@ body {
     margin: 0 auto;
     max-width: 800px;
     word-break: break-word;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 5px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    z-index: -1;
 }
 
 @media screen and (min-width: 320px) {
