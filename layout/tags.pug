@@ -14,7 +14,7 @@ block content
                     if tag.length
                         span.tag-name(id=tag.name) 
                             span(class="text")= tag.name + " (" + tag.length + ")"
-                        for post in tag.posts.toArray()
+                        for post in _.sortBy(tag.posts.toArray(),[function(o) { return -o.date.format('YYYYMMDD')}])
                             .tag-post
                                 span.tag-post-time= post.date.format(config.date_format)
                                 a.tag-post-name(href=url_for(post.path),title=post.title)= ' ' + post.title

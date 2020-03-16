@@ -3,10 +3,10 @@ extends base
 block content
     section.archive
         //- 年份取反,为了倒序输出
-        each posts, year in _.groupBy(site.posts.toArray(), function(p){return -p.date.format('YYYY')})
+        each posts, year in _.groupBy(page.posts.toArray(), function(p){return -p.date.format('YYYY')})
             ul.post-archive
                 .year= -year
-                for post in posts
+                for post in _.sortBy(posts,[function(o) { return -o.date.format('YYYYMMDD')}])
                     li.post-item
                         span.post-date= post.date.format(config.date_format)
                         a.post-title(href=url_for(post.path),title=post.title)
