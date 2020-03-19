@@ -5,5 +5,6 @@ menu:
   RSS: /rss
 
 excerpt: false
-favicon: favicon.png
+favicon: favicon.ico
 license: 本站文章使用 CC BY-NC-SA 4.0 许可证
+rss: /atom.xml
